@@ -24,6 +24,10 @@
                 sectionsColor: ['#51a0ff', '#ff8651',  '#ff8651', '#ff8651', '#ff8651', '#ff8651', '#ff8651', '#ff5151', '#c453fe', '#26cc70', '#26ccaf', '#26ccaf'],
                 navigation: true,
                 slidesNavigation: true,
+                responsiveWidth: 900,
+                afterResponsive: function(isResponsive){
+
+                }
             });
             // calling fullpage.js methods using jQuery
             $('#moveSectionUp').click(function(e){
@@ -39,7 +43,7 @@
 </head>
 <body>
 <div id="header">
-    The 3Traders <br>
+    The 3Traders<br>
     <p style="font-size: 14px">Paul Lenoir, Vincent Leduc, William Gingras</p>
 </div>
 
