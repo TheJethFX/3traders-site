@@ -1,0 +1,81 @@
+html{
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+body{
+    color: white;
+    line-height: 1.5;
+}
+
+.mySlides {
+    display:none;
+    text-align: center;
+}
+
+.mobileAverageDots {
+    display:none;
+    text-align: center;
+}
+
+.section {
+    text-align: center;
+    font-size: 3em;
+}
+
+#header, #footer{
+    position:fixed;
+    height: 50px;
+    display:block;
+    width: 100%;
+    background: alpha;
+    z-index:9;
+    text-align:left;
+    color: white;
+    padding: 20px 0 0 10px;
+    font-size: 3em;
+}
+
+#header{
+    top:0px;
+}
+
+a.button{
+    display:inline-block;
+    padding:0.2em 0.8em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:"Arial";
+    font-weight:bold;
+    font-size: 0.6em;
+    color:#26ccaf;
+    text-decoration:none;
+    background-color:white;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    text-align:center;
+    position:relative;
+}
+
+.text-wrap{
+    padding: 0 800px;
+}
+
+.title{
+    font-size: 52px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subtitle{
+    font-size: 36px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.text{
+    font-size: 24px;
+    text-align: justify;
+    text-justify: inter-word;
+}

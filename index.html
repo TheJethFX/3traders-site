@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The 3Traders</title>
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <link type="text/css" rel="stylesheet" href="./css/fullpage.css">
+    <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        var console = { log: function() {} };
+    </script>
+    <![endif]-->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/fullpage.js"></script>
+
+    <script type="text/javascript">
+        //using document ready...
+        $(document).ready(function(){
+            //initialising fullpage.js in the jQuery way
+            $('#fullpage').fullpage({
+                sectionsColor: ['#51a0ff', '#ff8651',  '#ff8651', '#ff8651', '#ff8651', '#ff8651', '#ff8651', '#ff5151', '#c453fe', '#26cc70', '#26ccaf', '#26ccaf'],
+                navigation: true,
+                slidesNavigation: true,
+            });
+            // calling fullpage.js methods using jQuery
+            $('#moveSectionUp').click(function(e){
+                e.preventDefault();
+                $.fn.fullpage.moveSectionUp();
+            });
+            $('#moveSectionDown').click(function(e){
+                e.preventDefault();
+                $.fn.fullpage.moveSectionDown();
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="header">
+    The 3Traders <br>
+    <p style="font-size: 14px">Paul Lenoir, Vincent Leduc, William Gingras</p>
+</div>
+
+<div id="fullpage">
+    <!-- Descriptif du sujet de recherche -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Proposition de recherche</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Description du sujet de recherche : </p>
+                <p class="text">En se basant sur une stratégie de courtage du Forex, l'intelligence artificielle déterminera s'il faudra acheter à la hausse ou à la baisse une devise ainsi que l'objectif de gain et de perte estimé. L'intelligence artificielle prendra position automatiquement sur une devise. Un résumé des opérations réalisées sera affiché dans un Dashboard.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Objectif général : </p>
+                <p class="text">Négocier un indice du Forex avec une stratégie en utilisant l'apprentissage automatisé pour accroître les gains.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Objectifs spécifiques : </p>
+                <div class="text">
+                    <li>Accéder à l'API Alpha Vantage, qui communique le taux de l'indice USD/CAD en temps réel.</li>
+                    <li>Développer une stratégie de courtage.</li>
+                    <li>Développer une intelligence artificielle qui utilisera la stratégie en courtage journalier et ouvrira/clôturera des positionnements en totale autonomie.</li>
+                    <li>Développer un Dashboard qui affichera un résumé (tableau, courbe de gain) de chaque opération.</li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Acquisition des connaissances 1/6 : Le trading -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Acquisition de connaissances (Trading)</h1>
+            <div class="text-wrap">
+                <p class="text">Notre thème principal est le <b>trading de la bourse</b>. La bourse comprend plusieurs marchés comme les actions (une part d’une entreprise), le Forex (les devises) et les matières premières.</p>
+                <p class="text">Nous avons choisi le Forex car c’est le marché dans lequel les entreprises de courtage chargent le moins pour une transaction d’achat ou de vente.</p>
+                <p class="text">Le Forex est un marché dans lequel nous échangeons une devise par une autre à des taux de change qui varient en permanence. Nous avons choisi USD/CAD, c’est-à-dire combien vaut 1 dollar USD contre 1 dollar CAN.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="text">Dans l’exemple ci-dessous, nous observons que le 31 octobre 2020 que <b>1$US = 1.333$CAN</b>, mais que le prix fluctue dans le temps.</p>
+                <img src="images/a_trading/Image14.png">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="text">Notre but est d’acheter quand l’indice est au plus bas et revendre quand l’indice est au plus haut.</p>
+                <img src="images/a_trading/Image15.png">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="text">Pour savoir quand acheter ou vendre, un trader utilise plusieurs outils en même temps :</p>
+                <div class="text">
+                    <li>La politique des pays.</li>
+                    <li>Des indicateurs qui nous renseigne sur la vitalité de l’indice.</li>
+                    <li>Son expérience</li>
+                </div>
+                <p class="text">Nous allons utiliser l’outil <b>Indicateur</b> pour notre projet.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="text">Il existe beaucoup d’indicateurs comme :</p>
+                <img class="mySlides" src="images/a_trading/Image16.png">
+                <img class="mySlides" src="images/a_trading/Image17.png">
+                <img class="mySlides" src="images/a_trading/Image18.png">
+                <img class="mySlides" src="images/a_trading/Image19.png">
+                <img class="mySlides" src="images/a_trading/Image20.png">
+                <img class="mySlides" src="images/a_trading/Image21.png">
+                <img class="mySlides" src="images/a_trading/Image21.png">
+                <img class="mySlides" src="images/a_trading/Image22.png">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Moyennes mobiles : </p>
+                <p class="text">Nous avons choisi d’utiliser les <b>moyennes</b> mobiles, qui représentent la moyenne des X derniers prix de clôture sur un intervalle de temps. Nous avons choisi la <b>moyenne mobile 20 et 50</b> sur un <b>intervalle de temps de 5 minutes</b>.</p>
+                <p class="text">Ainsi donc pour la moyenne mobile 20, à chaque 5 minutes nous avons un chiffre qui correspond à la moyenne des 20 derniers prix de clôture et pour la moyenne mobile 50, c’est la moyenne des de prix de clôture des 50 dernières périodes.</p>
+                <p class="text">Il y a plusieurs manières de lire une moyenne mobile :</p>
+                <div class="mobileAverageDots text">
+                    <p>1. Il faut voir quand la courbe de prix croise la moyenne mobile 20 (qui indique s' il faut acheter ou vendre).</p>
+                </div>
+                <div class="mobileAverageDots text">
+                    <p>2. Il faut voir la pente de la moyenne mobile 50 car elle nous indique la tendance de fond : </p>
+                    <img src="images/a_trading/Image23.png" height="80%" width="auto">
+                </div>
+                <div class="mobileAverageDots text">
+                    <p>3. Il faut voir si les moyennes mobiles restent parallèles ou bien se rapprochent, s’éloignent ou se croisent : </p>
+                    <img src="images/a_trading/Image24.png">
+                    <img src="images/a_trading/Image25.png">
+                </div>
+                <div class="mobileAverageDots text">
+                    <p>4. La pente de la moyenne mobile nous indique sur la force de la tendance : </p>
+                    <img src="images/a_trading/Image26.png">
+                </div>
+                <div class="mobileAverageDots text">
+                    <p>5. La moyenne mobile peut jouer le rôle d’un support ou d’une résistance : </p>
+                    <img src="images/a_trading/Image27.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Acquisition des connaissances 2/6 : Technologies -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Acquisition de connaissances (Technologies)</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Python : </p>
+                <p class="text">Nous utilisons le langage Python car il possède de nombreux packages pour faire du traitement, de l’analyse et de l’affichage de données numériques. Un package est un regroupement de fichiers que l’on appelle aussi module.</p>
+                <img src="images/b_technologies/Image28.png">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Packages : </p>
+                <div class="text">
+                    <li>Plotly : package outils d’analyse et de visualisation de données. Nous l’utilisons pour visualiser le prix de l’indice en bougie ainsi que les courbes représentatives des moyennes mobiles.</li>
+                    <ul><img src="images/b_technologies/Image29.png"></ul>
+                    <li>Numpy qui permet de créer des tableaux à n dimensions : </li>
+                    <ul><img src="images/b_technologies/Image30.png"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Librairies (1/4) : </p>
+                <div class="text">
+                    <li>Dash qui permet de créer des applications Web en simplifiant le langage Python. Comparativement à un package, une librairie est composée d’une multitude de packages.</li>
+                    <ul><img src="images/b_technologies/Image31.png"></ul>
+                    <li>Pandas permet de manipuler et d’analyser les données. Nous l’utilisons pour créer des DataFrames qui se comportent comme un dictionnaire, dont les clefs sont les noms des colonnes et les valeurs sont des séries.</li>
+                    <ul><img src="images/b_technologies/Image32.png"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Librairies (2/4) : </p>
+                <div class="text">
+                    <li>Sklearn ou scikit-learn qui permet de faire de l’apprentissage automatisé avec des models.</li>
+                    <ul><img src="images/b_technologies/Image33.png"></ul>
+                    <li>Nous utilisons l’API alpha_vantage afin de récupérer les éléments d’une bougie représentant 5 minutes pour l’indice USD/CAD</li>
+                    <ul><img src="images/b_technologies/Image34.png"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Librairies (3/4) : </p>
+                <div class="text">
+                    <li>Nous utilisons pgAdmin pour administrer notre base de données PostgreSQL.</li>
+                    <ul><li>Il permet de visualiser nos tables avec leurs valeurs :</li></ul>
+                    <ul><ul><img src="images/b_technologies/Image35.png"></ul></ul>
+                    <ul><li>Il permet de créer, supprimer, mettre à jour nos tables avec des scripts :</li></ul>
+                    <ul><ul><img src="images/b_technologies/Image36.png"></ul></ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Librairies (4/4) : </p>
+                <div class="text">
+                    <li>Puisque nous utilisons un compte gratuit avec Heroku, la taille de la base de données PostgreSQL est limitée à 7 méga octets.</li>
+                    <li>La base de données est créée tout simplement en cliquant “Install Heroku Postgres” sur le site officiel de Heroku :</li>
+                    <ul><img src="images/b_technologies/Postgresql.png" width="80%" height="auto"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Acquisition des connaissances 3/6 : Architecture -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Acquisition de connaissances (Architecture)</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Connection.py : </p>
+                <li class="text">Gère la connexion et la déconnexion avec notre base de données PostgreSQL.</li>
+                <img src="images/c_architecture/Image37.png">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Dashboard.py : </p>
+                <li class="text">Affiche le cours en temps réel de notre indice.</li>
+                <li class="text">Affiche les moyennes mobiles.</li>
+                <li class="text">Affiche les trades en cours et terminés.</li>
+                <li class="text">Affiche le budget total et le gain total.</li>
+                <img src="images/c_architecture/Image38.png">
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">DataBase.py : </p>
+                <li class="text">Fait les appels à la BD avec le cursor.execute(requête).</li>
+                <li class="text">Exécute les calculs nécessaires à la stratégie.</li>
+                <ul><img src="images/c_architecture/Image39.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Stratégie_1.py : </p>
+                <li class="text">Calcul de la moyenne mobile.</li>
+                <li class="text">Analyse des moyennes afin de voir si le moment est propice à acheter/vendre.</li>
+                <ul><img src="images/c_architecture/Image40.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">DecisionTreeRegression.py :</p>
+                <li class="text">Analyse des données présentes.</li>
+                <li class="text">Calcul des données futures.</li>
+                <ul><img src="images/c_architecture/Image41.png"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- Acquisition des connaissances 4/6 : Fonctionnement du DashBoard -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Acquisition de connaissances (Fonctionnement du DashBoard)</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Dashboard (1/2) : </p>
+                <li class="text">Le layout, qui décrit ce que l’application aura l’air. Il est divisé par des composants comme html.Div, html.H1 et dcc.Graph.</li>
+                <ul><img src="images/d_fonct_dashboard/Image42.png"></ul>
+                <li class="text">La description de l’interaction de l’application avec des fonctions callback.</li>
+                <ul><img src="images/d_fonct_dashboard/Image43.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">DashBoard (2/2) : </p>
+                <li class="text">Tout à la fin de notre code, il y a ce code qui permet le ‘hot-reloading’. Dash fait une actualisation dès que l’on change quelque chose, comme un choix dans une liste déroulante.</li>
+                <ul><img src="images/d_fonct_dashboard/Image44.png"></ul>
+                <li class="text">Dash permet de faire des applications avec de multiples domaines.</li>
+                <ul><img src="images/d_fonct_dashboard/Image45.png"></ul>
+                <ul><img src="images/d_fonct_dashboard/Image46.png"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- Acquisition des connaissances 5/6 : Fonctionnement de l'IA -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Acquisition de connaissances (Fonctionnement de l'IA)</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Déroulement : </p>
+                <li class="text">Sklearn propose des modèles de machines learning sous forme de programmation objet. C’est-à-dire que chaque modèle correspond à une classe. Il y existe de nombreux modèles de machine learning :</li>
+                <ul><img src="images/e_fonct_IA/Image3.png"></ul>
+                <li class="text">L’avantage de cette librairie est que son fonctionnement est toujours le même.</li>
+                <ul><img src="images/e_fonct_IA/Image4.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Déroulement (suite) : </p>
+                <li class="text">X et Y sont 2 tableaux Numpy à 2 dimensions (samples = valeurs et features = paramètres).</li>
+                <li class="text">Dans le score, le model prend les valeurs de X et prédit l’avenir et les compare à Y.</li>
+                <li class="text">Pour choisir le modèle qu’il vous faut :</li>
+                <ul><img src="images/e_fonct_IA/Image5.png" width="90%" height="auto"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Déroulement (suite) : </p>
+                <li class="text">Si nous reprenons notre code, le model est :</li>
+                <ul><img src="images/e_fonct_IA/Image6.png"></ul>
+                <li class="text">Création d’un DataFrame qui a 2 dimensions. Il y a 2 colonnes : ‘CLOSE_PRICE’ et ‘Prediction’.</li>
+                <ul><img src="images/e_fonct_IA/Image7.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Déroulement (suite) : </p>
+                <li class="text">Le shift permet de reculer les données de ‘CLOSE_PRICE’ dans la colonne ‘Prediction’. Par exemple, avec un shift équivalant à -1, les valeurs NaN seront remplacées par les valeurs prédites.</li>
+                <ul><img src="images/e_fonct_IA/tableauE.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Déroulement (suite) : </p>
+                <li class="text">Nous avons ensuite un entraînement du model :</li>
+                <ul><img src="images/e_fonct_IA/Image9.png"></ul>
+                <li class="text">La prédiction de l'avenir s'en suit :</li>
+                <ul><img src="images/e_fonct_IA/Image10.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Déroulement (suite) : </p>
+                <li class="text">Dans notre cas, nous prenons les 12 derniers index de la colonne ‘CLOSE_PRICE’ afin de les prédire. Cela permet de faire une comparaison visuelle entre les vraies valeurs et les valeurs prédises.</li>
+                <ul><img src="images/e_fonct_IA/Image11.png"></ul>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Invalidité : </p>
+                <p class="text">Notre model n’est pas très performant pour différentes raisons :</p>
+                <li class="text">Le model n’est peut-être pas le meilleur.</li>
+                <li class="text">Nous n’avons pas configuré les hypers paramètres du model.</li>
+                <li class="text">Nous avons pas utilisé la méthode split(x,y), qui permet de créer un tableau d’entrainement Numpy ainsi qu'un tableau de test Numpy.</li>
+            </div>
+        </div>
+    </div>
+    <!-- Acquisition des connaissances 6/6 : Fonctionnement d'une requête -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Acquisition de connaissances (Fonctionnement d'une requête)</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Étapes : </p>
+                <li class="text">1. Connexion à la base de données.</li>
+                <li class="text">2. Utilisation de cursor.execute() afin d'exécuter la requête.</li>
+                <li class="text">3. Utilisation de fetchAll() afin de récupérer les données de la requête.</li>
+                <li class="text">4. Les %s sont remplacés par les données dans data. Un commit est fait pour bien valider la mise à jour.</li>
+                <li class="text">5. Déconnexion de la base de données.</li>
+                <ul><img src="images/f_fonct_requete/Image12.png"></ul>
+                <ul><img src="images/f_fonct_requete/Image13.png"></ul>
+            </div>
+        </div>
+    </div>
+    <!-- Difficultés et problèmes rencontrés -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Difficultés et problèmes rencontrés</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Problème #1 : </p>
+                <p class="text">Dans un premier temps, nous travaillions souvent sur les mêmes fichiers, mais très rarement sur les mêmes fonctions. Puisque nous utilisions GIT et que nous travaillions sur les mêmes fichiers, cela entraînait beaucoup de merge conflict.  Afin de les corriger, nous devions prendre du temps ensemble et s'assurer que nous avions tous le code de chacun.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Problème #2 : </p>
+                <p class="text">Dans un second temps, nous utilisions Dash pour faire notre graphique. Ainsi, celui-ci doit recevoir un type de données spécifique afin de faire l’affichage correctement. Avec les requêtes que nous faisions à la base de données, nous recevions des Tuples ou des dictionnaires. En python, les types de variables sont gérées automatiquement, ce qui nous posait des problèmes puisque nous pensions avoir un type, mais Python en disait autrement. Nous devions caster la plupart des données afin de faire fonctionner le Dash comme nous le souhaitions.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Problème #3 : </p>
+                <p class="text">Dans un dernier temps, le plus gros problème était les imports avec Python. Nos imports fonctionnaient une fois sur deux. Il arrivait que plus rien ne fonctionnait dans la classe, sans n’avoir rien modifié. Vers la fin du projet, nous avons remarqué qu’importer un fichier Python provenant d’un autre dossier était problématique. Nous avons donc décidé de regrouper tous les fichiers du projet dans le même dossier. Du coup, l’arborescence du projet est moins belle, mais tout fonctionne.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Analyse des résultats -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Analyse des résultats</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Objectifs spécifiques : </p>
+                <li class="text">Accéder à l'API Alpha Vantage, qui communique le taux de l'indice USD/CAD en temps réel.</li>
+                <li class="text">Développer une stratégie de courtage.</li>
+                <li class="text">Développer une intelligence artificielle qui utilisera la stratégie en courtage journalier et ouvrira/clôturera des positionnements en totale autonomie.</li>
+                <li class="text">Développer un Dashboard qui affichera un résumé (tableau, courbe de gain) de chaque opération.</li>
+                <p class="text">Chacun de ceux-ci a été réalisé, sans exception. Nous avons une API qui nous retourne les prix de l’indice USD/CAD aux 5 minutes. Ces données sont stockées dans une base de données, pour être ensuite traitées afin d’appliquer la stratégie des moyennes mobiles en plus de l’affichage du graphique. Par la suite, nous avons mis en place une intelligence artificielle qui permet de prédire 12 résultats (index) en avance. Ces 12 résultats équivalent à une heure.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Conclusion -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Conclusion</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Résumé du projet : </p>
+                <p class="text">Nous avons conçu un programme d’automatisation du trading. Ce programme se base sur une stratégie de courtage dénommée moyenne mobile. À l’aide de cette stratégie, il est capable de savoir si l’instant même est idéal afin d’acheter ou de vendre. Nous avons mis en place une intelligence artificielle (IA) nous permettant de prédire la courbe de l’indice. Cette IA est actuellement juste utilisée afin de visualiser le futur dans un graphique (Dash). Dans l'avenir, nous voudrions implémenter cette IA dans l’analyse des données de nos stratégies de courtage. De plus, nous ne voudrions pas nous limiter à une seule stratégie de courtage, mais en inclure de nouvelles, comme par exemple : les bandes de Bollinger, les supports et résistance, etc. Avec toutes ces stratégies, nous pensons maximiser les gains tout en minimisant nos pertes potentielles dues à un marché très volatile.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Bibliographie -->
+    <div class="section">
+        <div class="slide">
+            <h1 class="title">Bibliographie</h1>
+            <div class="text-wrap">
+                <p class="subtitle">Images : </p>
+                <li class="text"><a href="https://fr.wikipedia.org/wiki/Bandes_de_Bollinger#/media/Fichier:Bollinger_fig1.png">Bandes de Bollinger</a></li>
+                <li class="text"><a href="http://www.tradersdaytrading.com/trading-support-and-resistance.html">Supports et résistance</a></li>
+                <li class="text"><a ref="https://admiralmarkets.com/fr/formation/articles/indicateurs-forex/indicateur-stochastique-forex">Stochastique</a></li>
+                <li class="text"><a href="https://investir-en-actions.com/ichimoku-kinko-hyo-mode-emploi-debuter-trading/">Ichimoku</a></li>
+                <li class="text"><a href="https://fr.wikipedia.org/wiki/Chandeliers_japonais">Bougies japonaises</a></li>
+                <li class="text"><a href="https://www.dailyfx.com/francais/actualite_forex_trading/ressources_forex/2012/09/18/Comment_lire_une_moyenne_mobile___fr.html">Moyenne mobile</a></li>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Cours : </p>
+                <li class="text"><a href="https://www.youtube.com/watch?v=mSh4h-J0z1c&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq&index=8&ab_channel=MachineLearnia">Machine Learning :</a><br>
+                    <p>Formation française sur la machine learning. Le youtubeur nous explique au travers des 30 vidéos comment fonctionne le machine learning avec le langage python et la libraire sklearn au travers de différents exemples.</p></li>
+                <li class="text"><a href="http://www.python-simple.com/python-pandas/creation-dataframes.php">Utilisation de DataFrame :</a><br>
+                    <p>Site Web nous apprenant les bases de DataFrame. Plusieurs exemples de code et des différentes fonctions que nous offre ce type de dictionnaire Python.</p></li>
+                <li class="text"><a href="https://dash.plotly.com/layout">Dash :</a><br>
+                    <p>Introduction au fonctionnement de Dash qui nous explique les différentes parties et comment les coder. Il nous explique également comment créer de nouveaux components et ajouter du CSS.</p></li>
+                <li class="text"><a href="https://www.youtube.com/channel/UCqBFsuAz41sqWcFjZkqmJqQ/videos">Vidéos sur Dash :</a><br>
+                    <p>Youtubeur spécialisé dans le Dash qui nous explique dans chaque vidéo un concept de Dash comme par exemple : la connexion de Dash à une API, fonctions callbacks assujetties à un intervalle pour le rafraîchissement, etc.  Vidéo en anglais.</p></li>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">API : </p>
+                <li class="text"><a href="https://www.alphavantage.co/">API Alpha Vantage :</a><br>
+                    <p>Site Web utilisé afin de récupérer la clé pour faire nos appels à l’API. Celle-ci nous a permis d’avoir les différents prix pour l’indice USD/CAD à toutes les 5 minutes.</p></li>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="text-wrap">
+                <p class="subtitle">Liens divers : </p>
+                <li class="text"><a href="https://www.fmlabs.com/reference/default.htm?url=SimpleMA.htm">Calcul mathématique de la moyenne mobile :</a><br>
+                    <p>Explication écrite et numérique des indicateurs utilisables en trading.</p></li>
+                <li class="text"><a href="https://plotly.com/python/candlestick-charts/">Bougies dans Dash :</a><br>
+                    <p>Explication de comment ajouter des bougies dans un graphique Dash.</p></li>
+                <li class="text"><a href="https://info.cloudquant.com/2019/08/candlestick_plotly/">Flèches dans Dash :</a><br>
+                    <p>Explication de comment avoir des flèches d’indication dans un graphique Dash.</p></li>
+                <li class="text"><a href="https://towardsdatascience.com/using-python-to-visualize-stock-data-to-candlestick-charts-e1a5b08c8e9c">Stratégie de bougie :</a><br>
+                    <p>Schéma pour la stratégie de bougie (non-utilisé).</p></li>
+            </div>
+        </div>
+    </div>
+    <!-- Téléchargement -->
+    <div class="section">
+        <div class="slide">
+            <div class="text-wrap">
+                <a href="https://github.com/501-A20/projet-the3traders/archive/master.zip" class="button" style="background-color:white">Télécharger</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Indices slideshow -->
+<script>
+    var slideIndex = 0;
+    carouselIndices();
+
+    function carouselIndices() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {slideIndex = 1}
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carouselIndices, 3000);
+    }
+</script>
+
+<!-- Moyenne mobile slideshow -->
+<script>
+    var slideIndexMM = 0;
+    carouselMobileAverage();
+
+    function carouselMobileAverage() {
+        var i;
+        var x = document.getElementsByClassName("mobileAverageDots");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndexMM++;
+        if (slideIndexMM > x.length) {slideIndexMM = 1}
+        x[slideIndexMM-1].style.display = "block";
+        setTimeout(carouselMobileAverage, 6000);
+    }
+</script>
+</body>
+</html>
